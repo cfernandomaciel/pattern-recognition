@@ -1,0 +1,1 @@
+sudo lxc-start -n hadoop-container -d

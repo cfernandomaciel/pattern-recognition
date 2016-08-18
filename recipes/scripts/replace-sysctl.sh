@@ -1,0 +1,1 @@
+sudo cp -rf ../placeholders/sysctl.conf /etc/sysctl.conf
