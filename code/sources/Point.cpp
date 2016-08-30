@@ -3,6 +3,11 @@
 namespace dynengines {
     namespace geometry {
 
+        Point::Point(double x, double y) {
+            xval = x;
+            yval = y;
+        }
+
         double Point::dist(Point other) {
             double xd = xval - other.xval;
             double yd = yval - other.yval;

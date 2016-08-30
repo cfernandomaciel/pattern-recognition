@@ -1,5 +1,6 @@
 #include "opencv2/opencv.hpp"
 #include "headers/Blocks.h"
+#include "headers/Filters.h"
 
 namespace dynengines {
     namespace detector {
@@ -10,14 +11,17 @@ namespace dynengines {
 
         std::vector<cv::Rect> Blocks::detect(cv::Mat img) {
 
+            Filters filters;
+
             std::vector<cv::Rect> boundRect;
             cv::Mat img_gray, img_sobel, img_threshold, element;
 
 
-            cvtColor(img, img_gray, CV_BGR2GRAY);
 
-            cv::Sobel(img_gray, img_sobel, CV_8U, 1, 0, 3, 1, 0, cv::BORDER_DEFAULT);
-            cv::threshold(img_sobel, img_threshold, 0, 255, CV_THRESH_OTSU+CV_THRESH_BINARY);
+            img_gray = filters.convert2Gray(img);
+            img_sobel = filters.findEdges(img_gray);
+            img_threshold = filters.setThreshold(img_sobel);
+
 
             element = getStructuringElement(cv::MORPH_RECT, cv::Size(25, 10) );
             //element = getStructuringElement(cv::MORPH_RECT, cv::Size(17, 3) );

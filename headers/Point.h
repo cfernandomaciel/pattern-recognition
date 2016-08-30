@@ -7,10 +7,7 @@ namespace dynengines {
     namespace geometry {
         class Point {
         public :
-            Point::Point(double x = 0.0, double y = 0.0) {
-                xval = x;
-                yval = y;
-            }
+            Point(double x = 0.0, double y = 0.0);
 
             // Extractors.
             double x() { return xval; }

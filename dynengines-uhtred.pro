@@ -7,7 +7,8 @@ CONFIG -= qt
 SOURCES += code/main.cpp \
     code/sources/Blocks.cpp \
     code/sources/Document.cpp \
-    code/sources/Point.cpp
+    code/sources/Point.cpp \
+    code/sources/Filters.cpp
 
 #TODO: ja vou arrumar essa bagunça aqui
 INCLUDEPATH += "/home/cfernandomaciel/OpenCV/include"
