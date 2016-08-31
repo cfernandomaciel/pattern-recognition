@@ -1,29 +1,15 @@
-# README #
+# Dynamic Engines - OpenCV - Codename Uhtred#
 
-This README would normally document whatever steps are necessary to get your application up and running.
 
-### What is this repository for? ###
+### Prereqs ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* OpenCV
+* NCurses
+
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+` sudo apt-get install libopencv-dev python-opencv`
+* Run the following script [https://github.com/milq/scripts-ubuntu-debian/blob/master/install-opencv.sh](https://github.com/milq/scripts-ubuntu-debian/blob/master/install-opencv.sh)
+* Download NCurses
+* Install NCurses [http://tldp.org/HOWTO/NCURSES-Programming-HOWTO/intro.html#WHERETOGETIT](http://tldp.org/HOWTO/NCURSES-Programming-HOWTO/intro.html#WHERETOGETIT)
