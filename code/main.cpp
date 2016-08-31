@@ -1,14 +1,19 @@
 #include <iostream>
-#include "headers/Document.h"
+#include "headers/Output.h"
 
 using namespace std;
-using namespace dynengines::detector;
+using namespace dynengines;
 
 
 int main(int, char **)
 {
-    Document document;
-    document.setTexBlocks();
+
+    Output output;
+
+    //output.renderVideo();
+    //output.transformImage();
+    output.renderImage();
+
 
     return 0;
 }

@@ -9,7 +9,7 @@ namespace dynengines {
         class Document {
         public :
             Document();
-            void setTexBlocks();
+            cv::Mat setTextBlocks(cv::Mat imgIn);
 
         private :
             cv::Mat drawRectangle(cv::Mat imgIn, std::vector<cv::Rect> letterbox);

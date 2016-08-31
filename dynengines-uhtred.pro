@@ -1,6 +1,7 @@
 TEMPLATE = app
 CONFIG += console
 CONFIG += debug
+CONFIG += release
 CONFIG -= app_bundle
 CONFIG -= qt
 
@@ -8,7 +9,8 @@ SOURCES += code/main.cpp \
     code/sources/Blocks.cpp \
     code/sources/Document.cpp \
     code/sources/Point.cpp \
-    code/sources/Filters.cpp
+    code/sources/Filters.cpp \
+    code/sources/Output.cpp
 
 #TODO: ja vou arrumar essa bagunça aqui
 INCLUDEPATH += "/home/cfernandomaciel/OpenCV/include"
@@ -26,5 +28,6 @@ HEADERS += \
     headers/Blocks.h \
     headers/Document.h \
     headers/Filters.h \
-    headers/Point.h
+    headers/Point.h \
+    headers/Output.h
 

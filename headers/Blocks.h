@@ -8,6 +8,13 @@ namespace dynengines {
         public :
             Blocks();
             std::vector<cv::Rect> detect(cv::Mat img);
+            //void on_trackbar(int, void*);
+
+        private :
+            const int alpha_slider_max = 100;
+            int alpha_slider;
+            double alpha;
+            double beta;
         };
     }
 }
