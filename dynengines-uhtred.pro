@@ -1,7 +1,7 @@
 TEMPLATE = app
 CONFIG += console
+CONFIG += staticlib
 CONFIG += debug
-CONFIG += release
 CONFIG -= app_bundle
 CONFIG -= qt
 
@@ -12,17 +12,19 @@ SOURCES += code/main.cpp \
     code/sources/Filters.cpp \
     code/sources/Output.cpp
 
-#TODO: ja vou arrumar essa bagunça aqui
-INCLUDEPATH += "/home/cfernandomaciel/OpenCV/include"
 
-LIBS += -L/home/cfernandomaciel/OpenCV/build/lib \
+INCLUDEPATH += "/usr/local/include/opencv"
+
+LIBS += -L/usr/local/lib \
     -lopencv_core \
     -lopencv_imgcodecs \
     -lopencv_highgui \
     -lopencv_imgproc \
     -lopencv_video \
     -lopencv_videoio \
-    -lopencv_objdetect
+    -lopencv_objdetect \
+    -lncurses
+
 
 HEADERS += \
     headers/Blocks.h \
@@ -30,4 +32,3 @@ HEADERS += \
     headers/Filters.h \
     headers/Point.h \
     headers/Output.h
-

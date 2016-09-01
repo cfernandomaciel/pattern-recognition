@@ -10,6 +10,8 @@ namespace dynengines {
         public :
             Document();
             cv::Mat setTextBlocks(cv::Mat imgIn);
+            cv::Mat setTextBlocks(cv::Mat imgIn, int size);
+            cv::Mat setTextBlocks(cv::Mat imgIn, int width, int height);
 
         private :
             cv::Mat drawRectangle(cv::Mat imgIn, std::vector<cv::Rect> letterbox);

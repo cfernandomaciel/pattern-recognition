@@ -8,53 +8,44 @@ using namespace cv;
 using namespace std;
 
 namespace dynengines {
-    namespace detector {
-
-        const int alpha_slider_max = 100;
-        int alpha_slider;
-        double alpha;
-        double beta;
-
-        /// Matrices to store images
-        Mat src1;
-        Mat src2;
-        Mat dst;
+    namespace detector {        
 
         Document::Document() {
 
-        }
-
-        void on_trackbar( int, void* )
-        {
-         alpha = (double) alpha_slider/alpha_slider_max ;
-         beta = ( 1.0 - alpha );
-
-         addWeighted( src1, alpha, src2, beta, 0.0, dst);
-
-         //imshow( "Linear Blend", dst );
-
-         while (true) {
-            // cap >> image;
-
-             imshow("window", dst);
-
-             // delay 33ms
-             waitKey(33);
-         }
         }
 
 
         Mat Document::setTextBlocks(Mat imgIn) {
             Blocks blocks;
 
-            vector<Rect> letterbox = blocks.detect(imgIn);
+            vector<Rect> letterbox = blocks.detect(imgIn, 25, 10);
 
             Mat imgOut = drawRectangle(imgIn, letterbox);
 
 
             return imgOut;
+        }
+
+        Mat Document::setTextBlocks(Mat imgIn, int size) {
+            Blocks blocks;
+
+            vector<Rect> letterbox = blocks.detect(imgIn, size, size);
+
+            Mat imgOut = drawRectangle(imgIn, letterbox);
 
 
+            return imgOut;
+        }
+
+        Mat Document::setTextBlocks(Mat imgIn, int width, int height) {
+            Blocks blocks;
+
+            vector<Rect> letterbox = blocks.detect(imgIn, width, height);
+
+            Mat imgOut = drawRectangle(imgIn, letterbox);
+
+
+            return imgOut;
         }
 
         cv::Mat Document::drawRectangle(cv::Mat imgIn, std::vector<cv::Rect> letterbox) {

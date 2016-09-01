@@ -8,13 +8,34 @@ using namespace dynengines;
 
 int main(int, char **)
 {    
-    Output output;
+    int ch;
 
-    int i;
-    cout << "Please enter an integer value: ";
-    cin >> i;
-    cout << "The value you entered is " << i;
-    cout << " and its double is " << i*2 << ".\n";
+
+//    initscr();
+
+//    raw();
+//    keypad(stdscr, TRUE);
+//    noecho();
+
+
+//    printw("Type any character to see it in bold\n");
+//    ch = getch();
+//    if(ch == KEY_F(1))
+//        printw("F1 Key pressed");
+
+//   else {
+//       printw("The pressed key is ");
+//       attron(A_BOLD);
+//       printw("%c", ch);
+//       attroff(A_BOLD);
+//   }
+
+//    refresh();
+//    getch();
+//    endwin();
+
+
+    Output output;
 
 
     //output.renderVideo();

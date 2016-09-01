@@ -9,7 +9,7 @@ namespace dynengines {
 
         }
 
-        std::vector<cv::Rect> Blocks::detect(cv::Mat img) {
+        std::vector<cv::Rect> Blocks::detect(cv::Mat img, int width, int height) {
 
             Filters filters;
 
@@ -22,11 +22,14 @@ namespace dynengines {
             img_sobel = filters.findEdges(img_gray);
             img_threshold = filters.setThreshold(img_sobel);
 
+            if( width <= 0 )
+                width = 1;
 
-            element = getStructuringElement(cv::MORPH_RECT, cv::Size(25, 10) );
-            //element = getStructuringElement(cv::MORPH_RECT, cv::Size(17, 3) );
-            //element = getStructuringElement(cv::MORPH_RECT, cv::Size(30, 30) );
-            //element = getStructuringElement(cv::MORPH_RECT, cv::Size(45, 45) );
+            if( height <= 0)
+                height = 1;
+
+
+            element = getStructuringElement(cv::MORPH_RECT, cv::Size(width, height) );
 
             cv::morphologyEx(img_threshold, img_threshold, CV_MOP_CLOSE, element); //Does the trick
 

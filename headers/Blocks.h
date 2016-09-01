@@ -7,7 +7,7 @@ namespace dynengines {
 
         public :
             Blocks();
-            std::vector<cv::Rect> detect(cv::Mat img);
+            std::vector<cv::Rect> detect(cv::Mat img, int width, int height);
             //void on_trackbar(int, void*);
 
         private :
