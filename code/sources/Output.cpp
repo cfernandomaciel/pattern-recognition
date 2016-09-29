@@ -192,11 +192,12 @@ namespace dynengines {
 
         Document document;
 
-        Mat imgIn = cv::imread("defaulttestimage.jpg");
+        //Mat imgIn = cv::imread("defaulttestimage.jpg");
+        Mat imgIn = cv::imread(src);
 
         Mat imgOut = document.setTextBlocks(imgIn);
 
-        cv::imwrite("imgoutput.jpg", imgOut);
+        cv::imwrite(dst, imgOut);
 
     }
 }

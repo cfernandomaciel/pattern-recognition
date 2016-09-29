@@ -1,6 +1,7 @@
 #include <iostream>
 #include "headers/Output.h"
 #include <curses.h>
+#include <string.h>
 
 using namespace std;
 using namespace dynengines;
@@ -8,40 +9,31 @@ using namespace dynengines;
 
 int main(int argc, char* argv[])
 {    
-    int ch;
+    /*int ch;
 
     initscr();
 
     raw();
     keypad(stdscr, TRUE);
-    noecho();
+    noecho();*/
 
-    if(argc < 2) {
+    if(argc < 2)
+    {
         printw("{ result: \"error\", message: \"no parameters provided. please, input image src and image dst\" };");
-        return 0;
     }
 
-    ch = getch();
 
-    /*
-    if(ch == KEY_F(1))
-        printw("F1 Key pressed");
 
-   else {
-       printw("The pressed key is ");
-       attron(A_BOLD);
-       printw("%c", ch);
-       attroff(A_BOLD);
-   }*/
+    //ch = getch();
 
     Output output;
     //output.renderVideo();
-    output.transformImage(argv[0], argv[1]);
+    output.transformImage(argv[1], argv[2]);
     //output.renderImage();
 
-    refresh();
+    /*refresh();
     getch();
-    endwin();
+    endwin();*/
 
 
 
