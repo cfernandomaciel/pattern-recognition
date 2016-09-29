@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
     Output output;
     //output.renderVideo();
     output.transformImage(argv[1], argv[2]);
-    //output.renderImage();
+    //output.renderImage(argv[1]);
 
     /*refresh();
     getch();

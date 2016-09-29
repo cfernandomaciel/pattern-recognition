@@ -161,7 +161,7 @@ namespace dynengines {
         }
     }
 
-    void Output::renderImage() {        
+    void Output::renderImage(std::string src) {
 
         namedWindow("Video", CV_WINDOW_NORMAL);
 
@@ -179,7 +179,7 @@ namespace dynengines {
         createTrackbar("Height", "Video", &iSliderHeight, 100, on_trackbar_height);
 
 
-        imgIn  = imread("defaulttestimage.jpg");
+        imgIn  = imread(src);
 
         on_trackbar_brightness( 0, 0 );       
 
