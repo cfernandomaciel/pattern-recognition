@@ -6,41 +6,44 @@ using namespace std;
 using namespace dynengines;
 
 
-int main(int, char **)
+int main(int argc, char* argv[])
 {    
     int ch;
 
+    initscr();
 
-//    initscr();
+    raw();
+    keypad(stdscr, TRUE);
+    noecho();
 
-//    raw();
-//    keypad(stdscr, TRUE);
-//    noecho();
+    if(argc < 2) {
+        printw("{ result: \"error\", message: \"no parameters provided. please, input image src and image dst\" };");
+        return 0;
+    }
 
+    ch = getch();
 
-//    printw("Type any character to see it in bold\n");
-//    ch = getch();
-//    if(ch == KEY_F(1))
-//        printw("F1 Key pressed");
+    /*
+    if(ch == KEY_F(1))
+        printw("F1 Key pressed");
 
-//   else {
-//       printw("The pressed key is ");
-//       attron(A_BOLD);
-//       printw("%c", ch);
-//       attroff(A_BOLD);
-//   }
-
-//    refresh();
-//    getch();
-//    endwin();
-
+   else {
+       printw("The pressed key is ");
+       attron(A_BOLD);
+       printw("%c", ch);
+       attroff(A_BOLD);
+   }*/
 
     Output output;
-
-
     //output.renderVideo();
-    //output.transformImage();
-    output.renderImage();
+    output.transformImage(argv[0], argv[1]);
+    //output.renderImage();
+
+    refresh();
+    getch();
+    endwin();
+
+
 
 
     return 0;

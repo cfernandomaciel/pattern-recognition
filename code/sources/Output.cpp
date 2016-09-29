@@ -99,7 +99,7 @@ namespace dynengines {
         Mat imgOut = document.setTextBlocks(imgBlocks);
 
         if (!imgOut.empty()) {
-            imshow("Picture", imgOut);
+            imshow("Video", imgOut);
         }
     }
 
@@ -163,7 +163,7 @@ namespace dynengines {
 
     void Output::renderImage() {        
 
-        namedWindow("Picture", CV_WINDOW_NORMAL);
+        namedWindow("Video", CV_WINDOW_NORMAL);
 
         iSliderValue1 = 50;
         createTrackbar("Brightness", "Video", &iSliderValue1, 100, on_trackbar_brightness);
@@ -181,17 +181,14 @@ namespace dynengines {
 
         imgIn  = imread("defaulttestimage.jpg");
 
-        on_trackbar_brightness( 0, 0 );
-       // on_trackbar_contrast(iSliderValue2, 0 );
-       // on_trackbar_width( iSliderWidth, 0 );
-       // on_trackbar_height( iSliderHeight, 0 );
+        on_trackbar_brightness( 0, 0 );       
 
         waitKey(0);
 
     }
 
 
-    void Output::transformImage() {
+    void Output::transformImage(std::string src, std::string dst) {
 
         Document document;
 

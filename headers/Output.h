@@ -8,7 +8,7 @@ namespace dynengines {
     public :
         Output();
         void renderVideo();
-        void transformImage();
+        void transformImage(std::string src, std::string dst);
         void renderImage();
     };
 }
