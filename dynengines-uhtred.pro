@@ -10,7 +10,8 @@ SOURCES += code/main.cpp \
     code/sources/Document.cpp \
     code/sources/Point.cpp \
     code/sources/Filters.cpp \
-    code/sources/Output.cpp
+    code/sources/Output.cpp \
+    code/sources/JsonReader.cpp
 
 
 INCLUDEPATH += "/usr/local/include/opencv"
@@ -31,4 +32,5 @@ HEADERS += \
     headers/Document.h \
     headers/Filters.h \
     headers/Point.h \
-    headers/Output.h
+    headers/Output.h \
+    headers/JsonReader.h
