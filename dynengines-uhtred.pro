@@ -3,7 +3,7 @@ CONFIG += console
 CONFIG += staticlib
 CONFIG += debug
 CONFIG -= app_bundle
-CONFIG -= qt
+#CONFIG -= qt
 
 SOURCES += code/main.cpp \
     code/sources/Blocks.cpp \

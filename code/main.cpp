@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
 
     if(argc < 2)
     {
-        printw("{ result: \"error\", message: \"no parameters provided. please, input image src and image dst\" };");
+        printw("{ result: \"error\", message: \"no parameters provided. please, input image src, image, json\" };");
     }
 
 
