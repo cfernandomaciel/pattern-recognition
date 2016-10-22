@@ -10,7 +10,7 @@ namespace dynengines {
 
         class Document {
         public :
-            Document();
+            Document(string name);
             cv::Mat setTextBlocks(cv::Mat imgIn);
             cv::Mat setTextBlocks(cv::Mat imgIn, int size);
             cv::Mat setTextBlocks(cv::Mat imgIn, int width, int height);

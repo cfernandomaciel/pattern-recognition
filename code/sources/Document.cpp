@@ -28,7 +28,7 @@ namespace dynengines {
 
 
             return imgOut;
-        }C
+        }
 
         Mat Document::setTextBlocks(Mat imgIn, int size) {
             Blocks blocks;

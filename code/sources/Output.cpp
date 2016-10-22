@@ -24,7 +24,7 @@ namespace dynengines {
     int iSliderWidth;
     int iSliderHeight;
 
-    Document document;
+    Document document("bash");
 
     Output::Output() {
 
