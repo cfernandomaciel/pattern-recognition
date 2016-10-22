@@ -49,9 +49,23 @@ namespace dynengines {
         }
 
         cv::Mat Document::drawRectangle(cv::Mat imgIn, std::vector<cv::Rect> letterbox) {
-            for(int i=0;i<letterbox.size();++i)
-                cv::rectangle(imgIn, letterbox[i],cv::Scalar(0, 255, 0), 3, 8, 0);
+            if(letterbox.size() > 0) {
+                cout << "\"boxes\" : [ ";
+            }
+            for(int i=0;i<letterbox.size();++i) {
+                cout << "{ \"width\":  " << letterbox[i].width << ", \"height\": " << letterbox[i].height;
+                cout << ", \"x\": " << letterbox[i].x << ", \"y\": " << letterbox[i].y;
 
+                if((i+1) != letterbox.size()) {
+                    cout << "},";
+                } else {
+                    cout << "}";
+                }
+                cv::rectangle(imgIn, letterbox[i],cv::Scalar(0, 255, 0), 3, 8, 0);
+            }
+            if(letterbox.size() > 0) {
+                cout << "]\n";
+            }
 
             return imgIn;
         }
