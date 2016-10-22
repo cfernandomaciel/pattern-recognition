@@ -70,6 +70,14 @@ namespace dynengines {
             return imgIn;
         }
 
+        void Document::cut(cv::Mat imgIn, cv::Rect rect) {
+            cv::Mat crop = imgIn(rect);
+
+            cv::imwrite("imgIn-gotta-fix-this-shit-latter.jpg", crop);
+        }
+
+
+
 
 
     }

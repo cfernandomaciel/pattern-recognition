@@ -15,6 +15,7 @@ namespace dynengines {
 
         private :
             cv::Mat drawRectangle(cv::Mat imgIn, std::vector<cv::Rect> letterbox);
+            void cut(cv::Mat imgIn, cv::Rect rect);
 
         };
 
