@@ -84,13 +84,14 @@ namespace dynengines {
             string str = ss.str();
 
             createFolder();
-            cv::imwrite(document_name+"/cut-"+std::string(str)+".jpg", crop);
+            QString path = QString::fromLocal8Bit(document_name.c_str()).replace(".jpg", "");
+            cv::imwrite(path.toStdString()+"/cut-"+std::string(str)+".jpg", crop);
             i = i+1;
         }
 
         void Document::createFolder()
         {
-            QString path = QString::fromLocal8Bit(document_name.c_str());
+            QString path = QString::fromLocal8Bit(document_name.c_str()).replace(".jpg", "");
             if(!QDir(path).exists()) {
                 QDir().mkdir(path);
             }
