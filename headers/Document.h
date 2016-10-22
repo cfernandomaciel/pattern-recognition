@@ -2,7 +2,9 @@
 #define DOCUMENT_H
 
 #include "opencv2/opencv.hpp"
+#include <QString>
 
+using namespace std;
 namespace dynengines {
     namespace detector {
 
@@ -14,8 +16,11 @@ namespace dynengines {
             cv::Mat setTextBlocks(cv::Mat imgIn, int width, int height);
 
         private :
+            int i;
+            string document_name;
             cv::Mat drawRectangle(cv::Mat imgIn, std::vector<cv::Rect> letterbox);
             void cut(cv::Mat imgIn, cv::Rect rect);
+            void createFolder();
 
         };
 

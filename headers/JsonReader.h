@@ -5,7 +5,7 @@ namespace dynengines {
 
     class JsonReader {
     public:
-        Read();
+        void Read();
     };
 }
 

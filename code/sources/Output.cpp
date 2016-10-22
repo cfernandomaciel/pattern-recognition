@@ -190,7 +190,7 @@ namespace dynengines {
 
     void Output::transformImage(std::string src, std::string dst) {
 
-        Document document;
+        Document document(src);
 
         //Mat imgIn = cv::imread("defaulttestimage.jpg");
         Mat imgIn = cv::imread(src);

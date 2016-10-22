@@ -3,6 +3,9 @@
 #include "headers/Blocks.h"
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/core/core.hpp>
+#include <QString>
+#include <QDir>
+
 
 using namespace cv;
 using namespace std;
@@ -10,8 +13,9 @@ using namespace std;
 namespace dynengines {
     namespace detector {        
 
-        Document::Document() {
-
+        Document::Document(string name) {
+            i = 0;
+            document_name = name;
         }
 
 
@@ -24,7 +28,7 @@ namespace dynengines {
 
 
             return imgOut;
-        }
+        }C
 
         Mat Document::setTextBlocks(Mat imgIn, int size) {
             Blocks blocks;
@@ -61,6 +65,7 @@ namespace dynengines {
                 } else {
                     cout << "}";
                 }
+                cut(imgIn, letterbox[i]);
                 cv::rectangle(imgIn, letterbox[i],cv::Scalar(0, 255, 0), 3, 8, 0);
             }
             if(letterbox.size() > 0) {
@@ -73,7 +78,23 @@ namespace dynengines {
         void Document::cut(cv::Mat imgIn, cv::Rect rect) {
             cv::Mat crop = imgIn(rect);
 
-            cv::imwrite("imgIn-gotta-fix-this-shit-latter.jpg", crop);
+            stringstream ss;
+            ss << i;
+
+            string str = ss.str();
+
+            createFolder();
+            cv::imwrite(document_name+"/cut-"+std::string(str)+".jpg", crop);
+            i = i+1;
+        }
+
+        void Document::createFolder()
+        {
+            QString path = QString::fromLocal8Bit(document_name.c_str());
+            if(!QDir(path).exists()) {
+                QDir().mkdir(path);
+            }
+
         }
 
 
